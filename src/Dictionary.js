@@ -27,7 +27,7 @@ export default function Dictionary(props) {
     let pexelsApiUrl = 
     `https://api.pexels.com/v1/search?query=${keyword}&per_page=1`;
 
-    axios.get(pexelsApiUrl).then(handlePexelsResponse);
+    axios.get(pexelsApiUrl, ).then(handlePexelsResponse);
   }
 
   function handleSubmit(event) {
