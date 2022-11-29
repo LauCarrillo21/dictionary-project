@@ -6,7 +6,7 @@ export default function App() {
     <div className="App">
       <div className="container">
         <header className="App-header">
-          <h1 class="text-center"> 📔 Dictionary 🔎  </h1>
+          <h1 class="text-center"> 📔 Dictionary </h1>
           <h3 class="text-center"> Search for any word </h3>
         </header>
         <main>
