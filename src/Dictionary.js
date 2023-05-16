@@ -18,17 +18,19 @@ export default function Dictionary(props) {
     setPhotos(response.data.photos);
   }
 
-  function search() {
+ { function search() {
     // documentation: https://dictionaryapi.dev/e
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
     axios.get(apiUrl).then(handleDictionResponse);
 
     let pexelsApiKey =
-      "563492ad6f91700001000001aca243189127426e8764de86bf1ff36a";
-    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=9`;
+      "4bfb73a00210a185tacffd8o47774b6a";
+    let pexelsApiUrl = `https://api.shecodes.io/images/v1/search?query={keyword}&key={pexelsApiKey}`;
     let headers = { Authorization: `Bearer ${pexelsApiKey}` };
     axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
-  }
+  }}
+
+
 
   function handleSubmit(event) {
     event.preventDefault();
