@@ -15,22 +15,19 @@ export default function Dictionary(props) {
   }
 
   function handlePexelsResponse(response) {
+    console.log(response.data.photos);
     setPhotos(response.data.photos);
   }
 
-function search() {
+  function search() {
     // documentation: https://dictionaryapi.dev/e
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
     axios.get(apiUrl).then(handleDictionResponse);
 
-    let pexelsApiKey =
-      "4bfb73a00210a185tacffd8o47774b6a";
+    let pexelsApiKey = "bd79ao40tde3dec118ca46bc3e6dd55f";
     let pexelsApiUrl = `https://api.shecodes.io/images/v1/search?query=${keyword}&key=${pexelsApiKey}`;
-    let headers = { Authorization: `Bearer ${pexelsApiKey}` };
-    axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
-  }}
-
-
+    axios.get(pexelsApiUrl).then(handlePexelsResponse);
+  }
 
   function handleSubmit(event) {
     event.preventDefault();
